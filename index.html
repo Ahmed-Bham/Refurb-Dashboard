@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Refurbishment progress – Cape Town 92 Marine</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F4F6; --panel:#FFFFFF; --ink:#1C2430; --muted:#5E6B7A; --line:#DCE2E8; --track:#E7ECF0;
+  --accent:#0F6E74; --bad:#C0392B;
+  --display:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Arial,sans-serif;
+  --r:8px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#151A21; --panel:#1D242D; --ink:#E6EBF0; --muted:#97A3B0; --line:#2E3742; --track:#2A333D; --accent:#4FB3B9; --bad:#F06A5D; color-scheme:dark; }
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 20px 60px;display:flex;flex-direction:column;gap:28px}
+h1,h2{font-family:var(--display);font-weight:600;margin:0;letter-spacing:.01em}
+h1{font-size:2.4rem;line-height:1.05}
+h2{font-size:1.3rem}
+.note{margin:4px 0 14px;color:var(--muted);font-size:.9rem}
+.num{font-variant-numeric:tabular-nums}
+
+/* Header */
+.head{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:flex-end;justify-content:space-between}
+.where{margin:0 0 6px;color:var(--muted)}
+.take{margin:10px 0 0;font-size:1.05rem;max-width:60ch}
+.take b{font-weight:600}
+.sync{display:flex;flex-direction:column;gap:6px;align-items:flex-end;font-size:.85rem;color:var(--muted)}
+.sync-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.dot{width:8px;height:8px;border-radius:50%;background:#2E9E5B;display:inline-block}
+.dot.stale{background:#D9A13B}.dot.err{background:var(--bad)}
+.btn{font:inherit;font-size:.85rem;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.sync-row:first-child{flex-wrap:nowrap;align-items:baseline}
+@media (max-width:640px){.sync{align-items:flex-start}.sync-row{justify-content:flex-start}}
+/* Overview */
+.overview{display:grid;grid-template-columns:minmax(240px,320px) 1fr;gap:16px}
+@media (max-width:760px){.overview{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px;min-width:0;position:relative}
+.gauge-card{display:flex;flex-direction:column;align-items:center;text-align:center}
+.gauge{width:100%;max-width:230px}
+.scale{display:flex;flex-wrap:wrap;gap:6px 12px;justify-content:center;font-size:.78rem;color:var(--muted);margin-top:10px}
+.scale span{display:inline-flex;align-items:center;gap:5px}
+.scale i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px}
+.tile{display:flex;flex-direction:column;gap:2px}
+.tile .label{color:var(--muted);font-size:.9rem}
+.tile .big{font-family:var(--display);font-weight:500;font-size:clamp(1.9rem,3.2vw,2.6rem);line-height:1.05;overflow-wrap:anywhere}
+.tile .big.alert{color:var(--bad)}
+.tile .sub{color:var(--muted);font-size:.85rem}
+
+/* Tables */
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{color:var(--muted);font-weight:600;font-size:.82rem}
+td.r,th.r{text-align:right}
+.bar{display:flex;align-items:center;gap:10px;min-width:150px}
+.track{flex:1;height:8px;border-radius:4px;background:var(--track);overflow:hidden}
+.fill{height:100%;border-radius:4px}
+.muted{color:var(--muted)}
+
+/* Teams */
+.teams{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.team{font:inherit;text-align:left;color:inherit;cursor:pointer;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:6px}
+.team:hover{border-color:var(--muted)}
+.team[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.team .name{font-weight:600}
+.team .big{font-family:var(--display);font-size:2rem;font-weight:500;line-height:1}
+.team .big small{font-family:var(--body);font-size:.85rem;color:var(--muted);margin-left:4px;font-weight:400}
+.team .stats{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.82rem;color:var(--muted)}
+.team .stats .bad{color:var(--bad);font-weight:600}
+
+/* Charts */
+.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.8rem;color:var(--muted);margin-bottom:10px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.chart{position:relative;min-height:200px}
+.chart svg{display:block;width:100%;height:auto}
+.chart text{font-family:var(--body);font-size:12px;fill:var(--muted)}
+.empty{color:var(--muted);font-size:.9rem;margin:0}
+.tip{position:absolute;pointer-events:none;background:var(--panel);border:1px solid var(--line);border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.15);padding:6px 10px;font-size:.8rem;white-space:nowrap;z-index:2;display:none}
+.tip .t{color:var(--muted);margin-bottom:2px}
+.tip i{width:9px;height:9px;border-radius:2px;display:inline-block;margin-right:6px}
+
+/* Unit list */
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+.search{flex:1;min-width:200px;font:inherit;font-size:.9rem;padding:7px 10px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{font:inherit;font-size:.85rem;padding:6px 12px;border:0;background:transparent;color:var(--ink);cursor:pointer}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.chip{font:inherit;font-size:.85rem;padding:4px 12px;border-radius:999px;border:1px solid var(--accent);background:transparent;color:var(--ink);cursor:pointer}
+.count{font-size:.85rem;color:var(--muted)}
+.units{max-height:560px;overflow:auto;border-top:1px solid var(--line)}
+.units th{position:sticky;top:0;background:var(--panel);z-index:1}
+.sort{font:inherit;font-weight:600;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+.sort[aria-sort="ascending"]::after{content:" ↑"}
+.sort[aria-sort="descending"]::after{content:" ↓"}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:.82rem}
+.pill i{width:8px;height:8px;border-radius:50%;display:inline-block}
+.od{color:var(--bad);font-weight:600}
+.product{max-width:280px;overflow:hidden;text-overflow:ellipsis}
+.error{border:1px solid var(--bad);color:var(--bad);border-radius:var(--r);padding:14px 16px;background:var(--panel)}
+@media (prefers-reduced-motion: no-preference){ .water{transition:transform .8s ease-out} }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="head">
+    <div>
+      <p class="where">Repairs, Cape Town 92 Marine</p>
+      <h1>Refurbishment progress</h1>
+      <p class="take" id="takeaway">Loading the tracker…</p>
+    </div>
+    <div class="sync">
+      <div class="sync-row"><span class="dot" id="sync-dot"></span><span id="sync-text">Loading…</span></div>
+      <div class="sync-row"><span id="next-check"></span><button class="btn" id="refresh" type="button">Refresh now</button></div>
+    </div>
+  </header>
+
+  <div class="error" id="error" hidden></div>
+
+  <section class="overview" aria-label="Overview">
+    <div class="card gauge-card">
+      <h2>Overall status</h2>
+      <p class="note">Share of all units done (completed or scrapped)</p>
+      <svg class="gauge" id="gauge" viewBox="0 0 200 200" role="img" aria-label="Share of units done"></svg>
+      <div class="scale" id="scale"></div>
+    </div>
+    <div class="tiles">
+      <div class="card tile"><span class="label">Done</span><span class="big num" id="k-done">–</span><span class="sub"><span id="k-pct">–</span> complete</span></div>
+      <div class="card tile"><span class="label">Allocated to a team</span><span class="big num" id="k-alloc">–</span><span class="sub"><span id="k-unalloc">–</span> unallocated</span></div>
+      <div class="card tile"><span class="label">In progress</span><span class="big num" id="k-prog">–</span><span class="sub"><span id="k-parts">–</span> awaiting parts</span></div>
+      <div class="card tile"><span class="label">Overdue</span><span class="big num" id="k-overdue">–</span><span class="sub">Past target date and not done</span></div>
+      <div class="card tile"><span class="label">Not categorised</span><span class="big num" id="k-uncat">–</span><span class="sub">Still to assess and categorise</span></div>
+      <div class="card tile" id="value-tile"><span class="label">Stock value done</span><span class="big num" id="k-valdone">–</span><span class="sub">of <span id="k-val">–</span> total stock value</span></div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="wo-h">
+    <h2 id="wo-h">Work order</h2>
+    <p class="note">Phase 1 Scrap first, then Phase 2 (parts available), then Phase 3 (parts to order).</p>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Phase</th><th>Category</th><th class="r">Units</th><th class="r">Done</th><th class="r">Remaining</th><th>% done</th><th>Phase status</th></tr></thead>
+        <tbody id="phases"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="teams-h">
+    <h2 id="teams-h">Teams</h2>
+    <p class="note">Click a team to filter the unit list. Click it again to show everyone.</p>
+    <div class="teams" id="teams"></div>
+  </section>
+
+  <section class="pair">
+    <div class="card">
+      <h2>Status by team</h2>
+      <p class="note">Units allocated to each team, split by current status.</p>
+      <div class="legend" id="legend"></div>
+      <div class="chart" id="status-chart"></div>
+    </div>
+    <div class="card">
+      <h2>Units done over time</h2>
+      <p class="note">Running total of units completed or scrapped, by week of Date Completed.</p>
+      <div class="chart" id="trend"></div>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="units-h">
+    <h2 id="units-h">Units</h2>
+    <p class="note">Every unit on the tracker. Search, filter, or click a column heading to sort.</p>
+    <div class="controls">
+      <input class="search" id="search" type="search" placeholder="Search job ID, product, brand…" aria-label="Search units">
+      <div class="seg" role="group" aria-label="Show">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="open" aria-pressed="false">Open</button>
+        <button type="button" data-filter="overdue" aria-pressed="false">Overdue</button>
+        <button type="button" data-filter="done" aria-pressed="false">Done</button>
+      </div>
+      <button type="button" class="chip" id="clear-team" hidden></button>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="units">
+      <table>
+        <thead><tr id="units-head"></tr></thead>
+        <tbody id="units-body"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<script>
+(() => {
+  const DATA_URL = 'dashboard_data.json';
+  const CHECK_SECONDS = 60;
+
+  const STATUSES = ['Not Started', 'Assessing', 'Awaiting Parts', 'In Progress', 'Quality Check', 'Completed', 'Scrapped', 'On Hold'];
+  const STATUS_COLOR = {'Not Started': '#9AA5B1', 'Assessing': '#7B6CC4', 'Awaiting Parts': '#D9A13B', 'In Progress': '#2F80C9',
+    'Quality Check': '#18A0A0', 'Completed': '#2E9E5B', 'Scrapped': '#8A5A44', 'On Hold': '#C8506A'};
+  const SCALE = ['#D64545', '#E8833A', '#E3BD2A', '#7CC46A', '#2E8B57'];
+  const SCALE_LABELS = ['0–24%', '25–49%', '50–74%', '75–99%', '100%'];
+  const PHASES = [[1, 'Scrap'], [2, 'Refurb - Parts Available'], [3, 'Refurb - Parts to Order']];
+  const IN_PROGRESS = ['Assessing', 'Awaiting Parts', 'In Progress', 'Quality Check'];
+
+  const state = {data: null, units: [], team: null, q: '', filter: 'all', sort: {key: 'job_id', dir: 1}, lastStamp: null, countdown: CHECK_SECONDS};
+
+  // ---------- helpers ----------
+  const $ = (id) => document.getElementById(id);
+  const fmtInt = new Intl.NumberFormat('en-ZA');
+  const int = (n) => fmtInt.format(n || 0);
+  const pct = (p) => Math.round((p || 0) * 100) + '%';
+  const rand = (v) => 'R' + fmtInt.format(Math.round(v || 0));
+  const scaleColor = (p) => SCALE[p >= 1 ? 4 : p >= .75 ? 3 : p >= .5 ? 2 : p >= .25 ? 1 : 0];
+  const day = (s) => { if (!s) return null; const d = new Date(s + 'T00:00:00'); return isNaN(d) ? null : d; };
+  const fmtDate = (s) => { const d = day(s); return d ? d.toLocaleDateString('en-ZA', {day: 'numeric', month: 'short', year: '2-digit'}) : ''; };
+  const fmtStamp = (s) => { const d = new Date(s); return isNaN(d) ? s : d.toLocaleString('en-ZA', {day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit'}); };
+  function el(tag, props = {}, ...kids) {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(props)) {
+      if (k === 'class') n.className = v; else if (k === 'style') Object.assign(n.style, v);
+      else if (k.startsWith('on')) n.addEventListener(k.slice(2), v); else if (v != null) n.setAttribute(k, v);
+    }
+    for (const kid of kids.flat()) if (kid != null) n.append(kid.nodeType ? kid : document.createTextNode(String(kid)));
+    return n;
+  }
+  const SVGNS = 'http://www.w3.org/2000/svg';
+  function svg(tag, attrs = {}, text) {
+    const n = document.createElementNS(SVGNS, tag);
+    for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  function bar(p, color) {
+    return el('div', {class: 'track'}, el('div', {class: 'fill', style: {width: (p * 100) + '%', background: color}}));
+  }
+
+  // ---------- data shaping (same rules as the Excel tracker) ----------
+  function shape(data) {
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const phaseOf = Object.fromEntries(PHASES.map(([p, c]) => [c, p]));
+    return data.units.map((u) => {
+      const status = u.status || 'Not Started';
+      const done = status === 'Completed' || status === 'Scrapped';
+      const alloc = day(u.date_allocated), target = day(u.target_date), comp = day(u.date_completed);
+      return Object.assign({}, u, {
+        status, done, value: Number(u.value) || 0,
+        team: u.team || 'Unallocated',
+        phase: phaseOf[u.category] || null,
+        days_open: alloc ? Math.max(0, Math.round(((comp || today) - alloc) / 864e5)) : null,
+        overdue: !done && target && target < today ? 'Yes' : ''
+      });
+    });
+  }
+
+  // ---------- render ----------
+  function renderAll() {
+    const units = state.units, total = units.length;
+    const n = (f) => units.filter(f).length;
+    const done = n((u) => u.done), uncat = n((u) => !u.phase);
+    const p = total ? done / total : 0;
+    const open = PHASES.find(([ph]) => units.some((u) => u.phase === ph && !u.done));
+    const current = open ? `Phase ${open[0]}, ${open[1]}` : uncat ? 'assess and categorise units' : 'all phases complete';
+    const sum = (us) => us.reduce((a, u) => a + u.value, 0);
+
+    const take = $('takeaway'); take.replaceChildren(
+      el('b', {}, int(done)), ' of ', el('b', {}, int(total)), ' units done. Current phase: ', el('b', {}, current), '.');
+
+    $('k-done').textContent = int(done);
+    $('k-pct').textContent = pct(p);
+    $('k-alloc').textContent = int(n((u) => u.team !== 'Unallocated'));
+    $('k-unalloc').textContent = int(n((u) => u.team === 'Unallocated'));
+    $('k-prog').textContent = int(n((u) => IN_PROGRESS.includes(u.status)));
+    $('k-parts').textContent = int(n((u) => u.status === 'Awaiting Parts'));
+    const od = n((u) => u.overdue === 'Yes');
+    $('k-overdue').textContent = int(od); $('k-overdue').classList.toggle('alert', od > 0);
+    $('k-uncat').textContent = int(uncat);
+    $('value-tile').hidden = state.data.include_values === false;
+    $('k-valdone').textContent = rand(sum(units.filter((u) => u.done)));
+    $('k-val').textContent = rand(sum(units));
+
+    renderGauge(p, done, total);
+    renderPhases(units);
+    renderTeams();
+    renderStatusChart();
+    renderTrend(units);
+    renderUnits();
+  }
+
+  function renderGauge(p, done, total) {
+    const g = $('gauge'); g.replaceChildren();
+    const c = 100, R = 88, inner = R - 5, col = scaleColor(p);
+    g.setAttribute('aria-label', `${pct(p)} of units done`);
+    const clip = svg('clipPath', {id: 'gclip'}); clip.append(svg('circle', {cx: c, cy: c, r: inner})); g.append(clip);
+    g.append(svg('circle', {cx: c, cy: c, r: inner, fill: 'var(--track)'}));
+    g.append(svg('circle', {cx: c, cy: c, r: R, fill: 'none', stroke: col, 'stroke-width': 4}));
+    const level = c + inner - 2 * inner * Math.min(1, Math.max(0, p));
+    const amp = p > 0 && p < 1 ? 4 : 0;
+    let d = `M-200,${level}`;
+    for (let x = -200; x <= 400; x += 5) d += `L${x},${(level + Math.sin(x / 16) * amp).toFixed(2)}`;
+    d += 'L400,220L-200,220Z';
+    const wg = svg('g', {'clip-path': 'url(#gclip)'}); wg.append(svg('path', {class: 'water', d, fill: col, 'fill-opacity': .85})); g.append(wg);
+    g.append(svg('text', {x: c, y: c + 2, 'text-anchor': 'middle', 'dominant-baseline': 'middle',
+      style: 'font-family:var(--display);font-size:46px;font-weight:600;fill:var(--ink)'}, pct(p)));
+    g.append(svg('text', {x: c, y: c + 34, 'text-anchor': 'middle', style: 'font-size:12px;fill:var(--ink)'}, `${int(done)} of ${int(total)} units`));
+  }
+
+  function renderPhases(units) {
+    const body = $('phases'); body.replaceChildren();
+    PHASES.forEach(([ph, cat]) => {
+      const us = units.filter((u) => u.phase === ph), d = us.filter((u) => u.done).length, pp = us.length ? d / us.length : 0;
+      const status = !us.length ? 'No units yet' : d === us.length ? 'Complete' : d ? 'In progress' : 'Not started';
+      body.append(el('tr', {}, el('td', {}, ph), el('td', {}, cat), el('td', {class: 'r num'}, int(us.length)),
+        el('td', {class: 'r num'}, int(d)), el('td', {class: 'r num'}, int(us.length - d)),
+        el('td', {}, el('div', {class: 'bar'}, bar(pp, scaleColor(pp)), el('span', {class: 'num'}, pct(pp)))),
+        el('td', {class: status === 'Complete' ? '' : 'muted'}, status)));
+    });
+    const un = units.filter((u) => !u.phase).length;
+    body.append(el('tr', {}, el('td', {}, '–'), el('td', {}, 'Not categorised yet'), el('td', {class: 'r num'}, int(un)),
+      el('td'), el('td'), el('td'), el('td', {class: 'muted'}, un ? 'Assess and categorise' : 'All categorised')));
+  }
+
+  function teamRows() {
+    const names = (state.data.teams || []).slice();
+    state.units.forEach((u) => { if (u.team !== 'Unallocated' && !names.includes(u.team)) names.push(u.team); });
+    names.push('Unallocated');
+    return names.map((t) => {
+      const us = state.units.filter((u) => u.team === t), d = us.filter((u) => u.done).length;
+      const row = {team: t, allocated: us.length, done: d, pct: us.length ? d / us.length : 0,
+        overdue: us.filter((u) => u.overdue === 'Yes').length, value: us.reduce((a, u) => a + u.value, 0),
+        progress: us.filter((u) => IN_PROGRESS.includes(u.status)).length};
+      STATUSES.forEach((s) => { row[s] = us.filter((u) => u.status === s).length; });
+      return row;
+    });
+  }
+
+  function renderTeams() {
+    const box = $('teams'); box.replaceChildren();
+    const showValue = state.data.include_values !== false;
+    teamRows().forEach((r) => {
+      box.append(el('button', {class: 'team', type: 'button', 'aria-pressed': String(state.team === r.team),
+        onclick: () => { state.team = state.team === r.team ? null : r.team; renderTeams(); renderUnits(); }},
+        el('span', {class: 'name'}, r.team),
+        el('span', {class: 'big num'}, int(r.done), el('small', {}, `of ${int(r.allocated)} done`)),
+        bar(r.pct, scaleColor(r.pct)),
+        el('span', {class: 'stats num'},
+          el('span', {}, `${int(r.progress)} in progress`),
+          el('span', {class: r.overdue ? 'bad' : ''}, `${int(r.overdue)} overdue`),
+          showValue ? el('span', {}, rand(r.value)) : null)));
+    });
+  }
+
+  function placeTip(tip, box, ev) {
+    const rect = box.getBoundingClientRect();
+    const x = ev.clientX - rect.left + 12, y = ev.clientY - rect.top + 12;
+    tip.style.display = 'block';
+    tip.style.left = Math.max(0, Math.min(x, box.clientWidth - tip.offsetWidth)) + 'px';
+    tip.style.top = y + 'px';
+  }
+
+  function renderStatusChart() {
+    const box = $('status-chart'); box.replaceChildren();
+    const rows = teamRows();
+    const W = Math.max(300, box.clientWidth || 500), rowH = 34, labW = 110, m = {t: 4, r: 40, b: 26, l: labW};
+    const H = m.t + m.b + rows.length * rowH;
+    const max = Math.max(1, ...rows.map((r) => r.allocated));
+    const step = max <= 5 ? 1 : Math.ceil(max / 5 / 5) * 5;
+    const top = Math.ceil(max / step) * step;
+    const x = (v) => m.l + (W - m.l - m.r) * v / top;
+    const s = svg('svg', {viewBox: `0 0 ${W} ${H}`, width: '100%'});
+    for (let v = 0; v <= top; v += step) {
+      s.append(svg('line', {x1: x(v), x2: x(v), y1: m.t, y2: H - m.b, stroke: 'var(--line)'}));
+      s.append(svg('text', {x: x(v), y: H - 8, 'text-anchor': 'middle'}, int(v)));
+    }
+    const tip = el('div', {class: 'tip'});
+    rows.forEach((r, i) => {
+      const y = m.t + i * rowH + 7, h = rowH - 14;
+      const label = svg('text', {x: m.l - 10, y: y + h / 2, 'text-anchor': 'end', 'dominant-baseline': 'middle', style: 'fill:var(--ink)'}, r.team);
+      s.append(label);
+      let acc = 0;
+      STATUSES.forEach((st) => {
+        if (!r[st]) return;
+        s.append(svg('rect', {x: x(acc), y, width: Math.max(0, x(acc + r[st]) - x(acc) - 1), height: h, rx: 3, fill: STATUS_COLOR[st]}));
+        acc += r[st];
+      });
+      s.append(svg('text', {x: x(acc) + 6, y: y + h / 2, 'dominant-baseline': 'middle'}, int(r.allocated)));
+      const hit = svg('rect', {x: 0, y: y - 4, width: W, height: h + 8, fill: 'transparent'});
+      hit.addEventListener('mousemove', (ev) => {
+        tip.replaceChildren(el('div', {class: 't'}, `${r.team}, ${int(r.allocated)} units`),
+          ...STATUSES.filter((st) => r[st]).map((st) => el('div', {}, el('i', {style: {background: STATUS_COLOR[st]}}), `${st}: ${int(r[st])}`)));
+        placeTip(tip, box, ev);
+      });
+      hit.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
+      s.append(hit);
+    });
+    box.append(s, tip);
+  }
+
+  function renderTrend(units) {
+    const box = $('trend'); box.replaceChildren();
+    const counts = {};
+    units.filter((u) => u.done && day(u.date_completed)).forEach((u) => {
+      const d = day(u.date_completed); d.setDate(d.getDate() - ((d.getDay() + 6) % 7));
+      const k = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+      counts[k] = (counts[k] || 0) + 1;
+    });
+    const keys = Object.keys(counts).sort();
+    if (!keys.length) {
+      const doneNoDate = units.filter((u) => u.done && !u.date_completed).length;
+      box.append(el('p', {class: 'empty'}, doneNoDate
+        ? `${int(doneNoDate)} done ${doneNoDate === 1 ? 'unit has' : 'units have'} no Date Completed yet. Enter it on the tracker and this chart fills in.`
+        : 'No units are done yet. This chart fills in as units are completed or scrapped.'));
+      return;
+    }
+    let run = 0;
+    const pts = keys.map((k) => { run += counts[k]; return {d: day(k), n: counts[k], v: run}; });
+    const W = Math.max(300, box.clientWidth || 500), H = 220, m = {t: 14, r: 44, b: 28, l: 40};
+    let t0 = +pts[0].d, t1 = +pts[pts.length - 1].d;
+    if (t0 === t1) { t0 -= 7 * 864e5; t1 += 7 * 864e5; }
+    const maxV = Math.max(1, run), step = maxV <= 5 ? 1 : Math.ceil(maxV / 4 / 5) * 5, top = Math.ceil(maxV / step) * step;
+    const x = (d) => m.l + (W - m.l - m.r) * (d - t0) / (t1 - t0);
+    const y = (v) => H - m.b - (H - m.b - m.t) * v / top;
+    const s = svg('svg', {viewBox: `0 0 ${W} ${H}`, width: '100%'});
+    for (let v = 0; v <= top; v += step) {
+      s.append(svg('line', {x1: m.l, x2: W - m.r, y1: y(v), y2: y(v), stroke: 'var(--line)'}));
+      s.append(svg('text', {x: m.l - 8, y: y(v), 'text-anchor': 'end', 'dominant-baseline': 'middle'}, int(v)));
+    }
+    const ticks = Math.max(2, Math.min(pts.length, Math.floor((W - m.l - m.r) / 90)));
+    for (let i = 0; i < ticks; i++) {
+      const t = t0 + (t1 - t0) * i / (ticks - 1);
+      s.append(svg('text', {x: x(t), y: H - 8, 'text-anchor': 'middle'}, new Date(t).toLocaleDateString('en-ZA', {day: 'numeric', month: 'short'})));
+    }
+    const col = '#2E9E5B';
+    s.append(svg('path', {d: pts.map((p, i) => `${i ? 'L' : 'M'}${x(+p.d)},${y(p.v)}`).join(''), fill: 'none', stroke: col, 'stroke-width': 2.5, 'stroke-linejoin': 'round', 'stroke-linecap': 'round'}));
+    const tip = el('div', {class: 'tip'});
+    pts.forEach((p) => {
+      const dot = svg('circle', {cx: x(+p.d), cy: y(p.v), r: 4.5, fill: col});
+      dot.addEventListener('mousemove', (ev) => {
+        tip.replaceChildren(el('div', {class: 't'}, 'Week of ' + p.d.toLocaleDateString('en-ZA', {day: 'numeric', month: 'short', year: 'numeric'})),
+          el('div', {}, `${int(p.n)} done that week, ${int(p.v)} in total`));
+        placeTip(tip, box, ev);
+      });
+      dot.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
+      s.append(dot);
+    });
+    const last = pts[pts.length - 1];
+    s.append(svg('text', {x: x(+last.d) + 8, y: y(last.v), 'dominant-baseline': 'middle', style: 'fill:var(--ink);font-weight:600'}, int(last.v)));
+    box.append(s, tip);
+  }
+
+  // ---------- unit list ----------
+  const COLS = [
+    ['job_id', 'Job ID'], ['product', 'Product'], ['brand', 'Brand'], ['value', 'Value (R)', 'r'], ['phase', 'Phase'],
+    ['team', 'Assigned to'], ['status', 'Status'], ['target_date', 'Target date'], ['days_open', 'Days open', 'r'], ['overdue', 'Overdue']];
+
+  function renderUnitsHead() {
+    const head = $('units-head'); head.replaceChildren();
+    const showValue = state.data && state.data.include_values === false ? false : true;
+    COLS.filter(([k]) => showValue || k !== 'value').forEach(([k, label, cls]) => {
+      const b = el('button', {class: 'sort', type: 'button', onclick: () => {
+        state.sort = {key: k, dir: state.sort.key === k ? -state.sort.dir : 1}; renderUnitsHead(); renderUnits();
+      }}, label);
+      if (state.sort.key === k) b.setAttribute('aria-sort', state.sort.dir === 1 ? 'ascending' : 'descending');
+      head.append(el('th', {class: cls || ''}, b));
+    });
+  }
+
+  function renderUnits() {
+    const q = state.q.trim().toLowerCase();
+    let rows = state.units.filter((u) =>
+      (!state.team || u.team === state.team) &&
+      (state.filter === 'all' || (state.filter === 'open' && !u.done) || (state.filter === 'done' && u.done) || (state.filter === 'overdue' && u.overdue === 'Yes')) &&
+      (!q || [u.job_id, u.product, u.brand, u.sku, u.team, u.status, u.category].join(' ').toLowerCase().includes(q)));
+    const {key, dir} = state.sort;
+    rows = rows.slice().sort((a, b) => {
+      const va = a[key], vb = b[key];
+      if (va == null || va === '') return 1; if (vb == null || vb === '') return -1;
+      return (typeof va === 'number' && typeof vb === 'number' ? va - vb : String(va).localeCompare(String(vb), undefined, {numeric: true})) * dir;
+    });
+    const showValue = state.data.include_values !== false;
+    const body = $('units-body'); body.replaceChildren();
+    rows.forEach((u) => body.append(el('tr', {},
+      el('td', {}, u.job_id), el('td', {class: 'product', title: u.product || ''}, u.product || ''), el('td', {}, u.brand || ''),
+      showValue ? el('td', {class: 'r num'}, fmtInt.format(Math.round(u.value))) : null,
+      el('td', {}, u.phase || ''), el('td', {class: u.team === 'Unallocated' ? 'muted' : ''}, u.team),
+      el('td', {}, el('span', {class: 'pill'}, el('i', {style: {background: STATUS_COLOR[u.status] || '#9AA5B1'}}), u.status)),
+      el('td', {class: 'num'}, fmtDate(u.target_date)), el('td', {class: 'r num'}, u.days_open == null ? '' : int(u.days_open)),
+      el('td', {class: u.overdue ? 'od' : ''}, u.overdue))));
+    $('count').textContent = `Showing ${int(rows.length)} of ${int(state.units.length)}`;
+    const chip = $('clear-team');
+    chip.hidden = !state.team;
+    chip.textContent = state.team ? `Team: ${state.team} ✕` : '';
+  }
+
+  // ---------- loading and auto-refresh ----------
+  async function load(manual) {
+    const dot = $('sync-dot'), text = $('sync-text');
+    try {
+      const res = await fetch(`${DATA_URL}?t=${Date.now()}`, {cache: 'no-store'});
+      if (!res.ok) throw new Error(`the data file could not be loaded (HTTP ${res.status}).`);
+      const data = await res.json();
+      $('error').hidden = true;
+      if (data.generated_at !== state.lastStamp || manual) {
+        const first = !state.data;
+        state.data = data; state.lastStamp = data.generated_at; state.units = shape(data);
+        if (first) renderUnitsHead();
+        renderAll();
+      }
+      const ageH = (Date.now() - new Date(data.generated_at)) / 36e5;
+      dot.className = 'dot' + (ageH > 24 ? ' stale' : '');
+      text.textContent = `Data last changed ${fmtStamp(data.generated_at)}, from ${data.source_file}`;
+    } catch (err) {
+      dot.className = 'dot err';
+      text.textContent = 'Could not refresh';
+      if (!state.data) { const e = $('error'); e.hidden = false; e.textContent = `The dashboard couldn’t load its data: ${err.message} Check that dashboard_data.json is in the repository.`; }
+    }
+    state.countdown = CHECK_SECONDS;
+  }
+
+  setInterval(() => {
+    state.countdown -= 1;
+    $('next-check').textContent = `Next check in ${state.countdown}s`;
+    if (state.countdown <= 0) load(false);
+  }, 1000);
+
+  // ---------- static bits and controls ----------
+  $('scale').replaceChildren(...SCALE.map((c, i) => el('span', {}, el('i', {style: {background: c}}), SCALE_LABELS[i])));
+  $('legend').replaceChildren(...STATUSES.map((st) => el('span', {}, el('i', {style: {background: STATUS_COLOR[st]}}), st)));
+  $('refresh').addEventListener('click', () => load(true));
+  $('search').addEventListener('input', (e) => { state.q = e.target.value; if (state.data) renderUnits(); });
+  document.querySelectorAll('[data-filter]').forEach((b) => b.addEventListener('click', () => {
+    state.filter = b.dataset.filter;
+    document.querySelectorAll('[data-filter]').forEach((o) => o.setAttribute('aria-pressed', String(o === b)));
+    if (state.data) renderUnits();
+  }));
+  $('clear-team').addEventListener('click', () => { state.team = null; renderTeams(); renderUnits(); });
+  let resizeTimer;
+  window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { if (state.data) { renderStatusChart(); renderTrend(state.units); } }, 150); });
+
+  load(true);
+})();
+</script>
+</body>
+</html>
