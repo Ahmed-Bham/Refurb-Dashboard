@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-03T11:49:30+02:00",
- "file_modified": "2026-11-03T11:48:17+02:00",
+ "generated_at": "2026-11-03T11:58:40+02:00",
+ "file_modified": "2026-11-03T11:57:01+02:00",
  "source_file": "Refurbishment_Tracker (2).xlsx",
  "include_values": true,
  "teams": [
@@ -1457,15 +1457,15 @@
    "brand": "Invicta",
    "unit": null,
    "value": 19351.0,
-   "category": null,
-   "team": null,
-   "date_allocated": null,
+   "category": "Refurb - Parts Available",
+   "team": "Alferes",
+   "date_allocated": "10-Jul-2026",
    "target_date": null,
-   "status": "Not Started",
+   "status": "Completed",
    "parts_required": null,
    "parts_ordered": null,
    "parts_received": null,
-   "date_completed": null,
+   "date_completed": "10-Jul-2026",
    "notes": null
   },
   {
