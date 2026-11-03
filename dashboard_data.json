@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-03T16:03:03+02:00",
- "file_modified": "2026-11-03T16:02:58+02:00",
+ "generated_at": "2026-11-03T16:09:11+02:00",
+ "file_modified": "2026-11-03T16:07:31+02:00",
  "source_file": "Refurbishment_Tracker (2).xlsx",
  "include_values": true,
  "teams": [
@@ -587,7 +587,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-093",
+   "job_id": "RF-033",
    "sku": "140015",
    "product": "Merida (IT 100K) Fireplace Fan Insert",
    "brand": "Calefaccion",
@@ -605,7 +605,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-094",
+   "job_id": "RF-034",
    "sku": "140015",
    "product": "Merida (IT 100K) Fireplace Fan Insert",
    "brand": "Calefaccion",
@@ -623,7 +623,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-033",
+   "job_id": "RF-035",
    "sku": "121001",
    "product": "Naomi",
    "brand": "NP Fire",
@@ -641,7 +641,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-034",
+   "job_id": "RF-036",
    "sku": "100011",
    "product": "Nero",
    "brand": "Victoria",
@@ -659,7 +659,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-035",
+   "job_id": "RF-037",
    "sku": "100023",
    "product": "Nero Lux",
    "brand": "Victoria",
@@ -677,7 +677,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-036",
+   "job_id": "RF-038",
    "sku": "100023",
    "product": "Nero Lux",
    "brand": "Victoria",
@@ -695,7 +695,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-037",
+   "job_id": "RF-039",
    "sku": "100203",
    "product": "Nola",
    "brand": "Warm Homes",
@@ -713,7 +713,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-038",
+   "job_id": "RF-040",
    "sku": "100203",
    "product": "Nola",
    "brand": "Warm Homes",
@@ -731,7 +731,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-039",
+   "job_id": "RF-041",
    "sku": "121006_3",
    "product": "Odyssey 100 (with 3 sided frame)",
    "brand": "NP Fire",
@@ -749,7 +749,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-040",
+   "job_id": "RF-042",
    "sku": "121004_7",
    "product": "Odyssey 55 (No Frame)",
    "brand": "NP Fire",
@@ -767,7 +767,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-041",
+   "job_id": "RF-043",
    "sku": "121005_7",
    "product": "Odyssey 70 (No Frame)",
    "brand": "NP Fire",
@@ -785,7 +785,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-042",
+   "job_id": "RF-044",
    "sku": "121005_7",
    "product": "Odyssey 70 (No Frame)",
    "brand": "NP Fire",
@@ -803,7 +803,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-043",
+   "job_id": "RF-045",
    "sku": "121005_7",
    "product": "Odyssey 70 (No Frame)",
    "brand": "NP Fire",
@@ -821,7 +821,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-044",
+   "job_id": "RF-046",
    "sku": "100058",
    "product": "Omega",
    "brand": "Victoria",
@@ -839,7 +839,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-045",
+   "job_id": "RF-047",
    "sku": "100058",
    "product": "Omega",
    "brand": "Victoria",
@@ -857,7 +857,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-046",
+   "job_id": "RF-048",
    "sku": "130022",
    "product": "Praktic Lux Cooking Stove (Ivory)",
    "brand": "Prometey",
@@ -875,7 +875,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-047",
+   "job_id": "RF-049",
    "sku": "130015",
    "product": "Pure Stoves Cooker",
    "brand": "Prometey",
@@ -893,7 +893,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-048",
+   "job_id": "RF-050",
    "sku": "130020",
    "product": "Pure Stoves Eco 4",
    "brand": "Prometey",
@@ -911,7 +911,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-049",
+   "job_id": "RF-051",
    "sku": "130020",
    "product": "Pure Stoves Eco 4",
    "brand": "Prometey",
@@ -929,7 +929,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-050",
+   "job_id": "RF-052",
    "sku": "100091",
    "product": "Pyro - Pellet Heater (White)",
    "brand": "Zheijang Zhongli Tools",
@@ -947,7 +947,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-051",
+   "job_id": "RF-053",
    "sku": "100032",
    "product": "Regina",
    "brand": "Victoria",
@@ -965,7 +965,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-052",
+   "job_id": "RF-054",
    "sku": "100032",
    "product": "Regina",
    "brand": "Victoria",
@@ -983,7 +983,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-053",
+   "job_id": "RF-055",
    "sku": "100032",
    "product": "Regina",
    "brand": "Victoria",
@@ -1001,7 +1001,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-054",
+   "job_id": "RF-056",
    "sku": "100032",
    "product": "Regina",
    "brand": "Victoria",
@@ -1019,7 +1019,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-055",
+   "job_id": "RF-057",
    "sku": "100032",
    "product": "Regina",
    "brand": "Victoria",
@@ -1037,7 +1037,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-056",
+   "job_id": "RF-058",
    "sku": "100032",
    "product": "Regina",
    "brand": "Victoria",
@@ -1055,7 +1055,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-057",
+   "job_id": "RF-059",
    "sku": "100032",
    "product": "Regina",
    "brand": "Victoria",
@@ -1073,7 +1073,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-058",
+   "job_id": "RF-060",
    "sku": "100032",
    "product": "Regina",
    "brand": "Victoria",
@@ -1091,7 +1091,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-059",
+   "job_id": "RF-061",
    "sku": "100032",
    "product": "Regina",
    "brand": "Victoria",
@@ -1109,7 +1109,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-060",
+   "job_id": "RF-062",
    "sku": "100032",
    "product": "Regina",
    "brand": "Victoria",
@@ -1127,7 +1127,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-061",
+   "job_id": "RF-063",
    "sku": "100032",
    "product": "Regina",
    "brand": "Victoria",
@@ -1145,7 +1145,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-062",
+   "job_id": "RF-064",
    "sku": "100101",
    "product": "Roma",
    "brand": "XZ Fire",
@@ -1163,7 +1163,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-063",
+   "job_id": "RF-065",
    "sku": "100101",
    "product": "Roma",
    "brand": "XZ Fire",
@@ -1181,7 +1181,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-064",
+   "job_id": "RF-066",
    "sku": "100039",
    "product": "Rubin (Ivory White)",
    "brand": "Victoria",
@@ -1199,7 +1199,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-065",
+   "job_id": "RF-067",
    "sku": "100039",
    "product": "Rubin (Ivory White)",
    "brand": "Victoria",
@@ -1217,7 +1217,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-066",
+   "job_id": "RF-068",
    "sku": "100039",
    "product": "Rubin (Ivory White)",
    "brand": "Victoria",
@@ -1235,7 +1235,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-067",
+   "job_id": "RF-069",
    "sku": "100016",
    "product": "Rubin (Red)",
    "brand": "Victoria",
@@ -1253,7 +1253,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-068",
+   "job_id": "RF-070",
    "sku": "100060",
    "product": "Rubin Lux (Black)",
    "brand": "Victoria",
@@ -1271,7 +1271,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-069",
+   "job_id": "RF-071",
    "sku": "100063",
    "product": "Rubin Lux (Red)",
    "brand": "Victoria",
@@ -1289,7 +1289,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-070",
+   "job_id": "RF-072",
    "sku": "100063",
    "product": "Rubin Lux (Red)",
    "brand": "Victoria",
@@ -1307,7 +1307,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-071",
+   "job_id": "RF-073",
    "sku": "100063",
    "product": "Rubin Lux (Red)",
    "brand": "Victoria",
@@ -1325,7 +1325,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-072",
+   "job_id": "RF-074",
    "sku": "100201",
    "product": "Selene",
    "brand": "Warm Homes",
@@ -1343,7 +1343,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-073",
+   "job_id": "RF-075",
    "sku": "100201",
    "product": "Selene",
    "brand": "Warm Homes",
@@ -1361,7 +1361,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-074",
+   "job_id": "RF-076",
    "sku": "100037",
    "product": "Toledo",
    "brand": "Victoria",
@@ -1379,7 +1379,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-075",
+   "job_id": "RF-077",
    "sku": "100006",
    "product": "Torino",
    "brand": "Victoria",
@@ -1397,7 +1397,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-076",
+   "job_id": "RF-078",
    "sku": "100051",
    "product": "Triumph F",
    "brand": "Victoria",
@@ -1415,7 +1415,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-077",
+   "job_id": "RF-079",
    "sku": "100103",
    "product": "Turin",
    "brand": "XZ Fire",
@@ -1433,7 +1433,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-078",
+   "job_id": "RF-080",
    "sku": "100103",
    "product": "Turin",
    "brand": "XZ Fire",
@@ -1451,7 +1451,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-079",
+   "job_id": "RF-081",
    "sku": "100087",
    "product": "Valkyrie  - Pellet Heater (Black)",
    "brand": "Zheijang Zhongli Tools",
@@ -1469,7 +1469,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-080",
+   "job_id": "RF-082",
    "sku": "100024",
    "product": "Verona",
    "brand": "Victoria",
@@ -1487,7 +1487,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-081",
+   "job_id": "RF-083",
    "sku": "100053",
    "product": "Viki Lux",
    "brand": "Victoria",
@@ -1505,7 +1505,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-082",
+   "job_id": "RF-084",
    "sku": "100110",
    "product": "Zeus",
    "brand": "Xuzhou",
@@ -1523,7 +1523,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-083",
+   "job_id": "RF-085",
    "sku": "100202",
    "product": "Catalina",
    "brand": "Warm Homes",
@@ -1541,7 +1541,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-084",
+   "job_id": "RF-086",
    "sku": "100202",
    "product": "Catalina",
    "brand": "Warm Homes",
@@ -1559,7 +1559,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-085",
+   "job_id": "RF-087",
    "sku": "190027",
    "product": "Invicta Elo M (White)",
    "brand": "Invicta",
@@ -1577,7 +1577,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-086",
+   "job_id": "RF-088",
    "sku": "190019",
    "product": "Invicta Le Modena (Ivory Enamel)",
    "brand": "Invicta",
@@ -1595,7 +1595,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-087",
+   "job_id": "RF-089",
    "sku": "110020",
    "product": "L9 DF Titan Double sided",
    "brand": "Liseo",
@@ -1613,7 +1613,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-088",
+   "job_id": "RF-090",
    "sku": "100009",
    "product": "Deluxe F",
    "brand": "Victoria",
@@ -1631,7 +1631,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-089",
+   "job_id": "RF-091",
    "sku": "110092",
    "product": "L11 Vulcan (Built in)",
    "brand": "Liseo",
@@ -1649,7 +1649,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-090",
+   "job_id": "RF-092",
    "sku": "100021",
    "product": "Parma L",
    "brand": "Victoria",
@@ -1667,7 +1667,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-091",
+   "job_id": "RF-093",
    "sku": "100021",
    "product": "Parma L",
    "brand": "Victoria",
@@ -1685,7 +1685,7 @@
    "notes": null
   },
   {
-   "job_id": "RF-092",
+   "job_id": "RF-094",
    "sku": "100021",
    "product": "Parma L",
    "brand": null,
