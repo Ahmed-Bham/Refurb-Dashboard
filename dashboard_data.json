@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-03T15:17:48+02:00",
- "file_modified": "2026-11-03T15:15:26+02:00",
+ "generated_at": "2026-11-03T16:03:03+02:00",
+ "file_modified": "2026-11-03T16:02:58+02:00",
  "source_file": "Refurbishment_Tracker (2).xlsx",
  "include_values": true,
  "teams": [
   "Ali & Shaheed",
   "Angelo",
-  "Talen",
+  "Talent",
   "Alferes"
  ],
  "units": [
@@ -1116,7 +1116,7 @@
    "unit": "10 of 11",
    "value": 8286.84,
    "category": "Refurb - Parts Available",
-   "team": "Talen",
+   "team": "Talent",
    "date_allocated": "29-Oct-2026",
    "target_date": null,
    "status": "Completed",
@@ -1134,7 +1134,7 @@
    "unit": "11 of 11",
    "value": 7093.93,
    "category": "Refurb - Parts Available",
-   "team": "Talen",
+   "team": "Talent",
    "date_allocated": "29-Oct-2026",
    "target_date": null,
    "status": "Completed",
