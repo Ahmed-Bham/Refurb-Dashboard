@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-03T12:07:56+02:00",
- "file_modified": "2026-11-03T12:07:13+02:00",
+ "generated_at": "2026-11-03T12:48:43+02:00",
+ "file_modified": "2026-11-03T12:48:14+02:00",
  "source_file": "Refurbishment_Tracker (2).xlsx",
  "include_values": true,
  "teams": [
@@ -1457,12 +1457,12 @@
    "brand": "Victoria",
    "unit": "1 of 1",
    "value": 12509.38,
-   "category": null,
+   "category": "Refurb - Parts to Order",
    "team": null,
    "date_allocated": null,
    "target_date": null,
    "status": "Not Started",
-   "parts_required": null,
+   "parts_required": "Long Bar",
    "parts_ordered": null,
    "parts_received": null,
    "date_completed": null,
