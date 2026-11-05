@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-05T15:20:45+02:00",
- "file_modified": "2026-11-05T15:19:54+02:00",
+ "generated_at": "2026-11-05T15:26:52+02:00",
+ "file_modified": "2026-11-05T15:26:08+02:00",
  "source_file": "Refurbishment_Tracker (2).xlsx",
  "include_values": true,
  "teams": [
@@ -1031,7 +1031,7 @@
    "target_date": null,
    "status": "Not Started",
    "parts_required": "Legs",
-   "parts_ordered": null,
+   "parts_ordered": "Yes",
    "parts_received": null,
    "date_completed": null,
    "notes": null
@@ -1139,7 +1139,7 @@
    "target_date": null,
    "status": "Not Started",
    "parts_required": "Door, Bricks",
-   "parts_ordered": null,
+   "parts_ordered": "Yes",
    "parts_received": null,
    "date_completed": null,
    "notes": null
@@ -1202,7 +1202,7 @@
    "job_id": "RF-067",
    "sku": "100021",
    "product": "Parma L",
-   "brand": null,
+   "brand": "Victoria",
    "unit": "3 of 3",
    "value": null,
    "category": "Refurb - Parts to Order",
@@ -1211,7 +1211,7 @@
    "target_date": null,
    "status": "Not Started",
    "parts_required": "Door & Handle",
-   "parts_ordered": null,
+   "parts_ordered": "Yes",
    "parts_received": null,
    "date_completed": null,
    "notes": null
