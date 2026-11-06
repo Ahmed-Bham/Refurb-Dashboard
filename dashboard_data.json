@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-06T11:07:07+02:00",
- "file_modified": "2026-11-06T11:06:45+02:00",
+ "generated_at": "2026-11-06T12:46:36+02:00",
+ "file_modified": "2026-11-06T12:46:30+02:00",
  "source_file": "Refurbishment_Tracker (2).xlsx",
  "include_values": true,
  "teams": [
@@ -1135,10 +1135,10 @@
    "unit": "2 of 2",
    "value": 6352.96,
    "category": "Refurb - Parts Available",
-   "team": null,
-   "date_allocated": null,
+   "team": "Shaheed/ Ali",
+   "date_allocated": "2026-11-06",
    "target_date": null,
-   "status": "Not Started",
+   "status": "In Progress",
    "parts_required": null,
    "parts_ordered": null,
    "parts_received": null,
