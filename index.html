@@ -30,6 +30,7 @@ h2{font-size:1.3rem}
 
 /* Header */
 .head{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:flex-end;justify-content:space-between}
+.logo{display:block;height:76px;width:auto;max-width:100%;margin:0 0 16px}
 .where{margin:0 0 6px;color:var(--muted)}
 .take{margin:10px 0 0;font-size:1.05rem;max-width:60ch}
 .take b{font-weight:600}
@@ -81,6 +82,7 @@ td.r,th.r{text-align:right}
 .team .stats{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.82rem;color:var(--muted)}
 .team .stats .bad{color:var(--bad);font-weight:600}
 
+.team .track{flex:none;height:8px}
 /* Charts */
 .pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
 .legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.8rem;color:var(--muted);margin-bottom:10px}
@@ -120,6 +122,7 @@ td.r,th.r{text-align:right}
 <main class="wrap">
   <header class="head">
     <div>
+      <picture><source srcset="logo-dark.png" media="(prefers-color-scheme: dark)"><img class="logo" src="logo.png" alt="Hydrofire"></picture>
       <p class="where">Repairs, Cape Town 92 Marine</p>
       <h1>Refurbishment progress</h1>
       <p class="take" id="takeaway">Loading the tracker…</p>
