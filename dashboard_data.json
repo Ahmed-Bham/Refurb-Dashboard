@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-06T12:46:36+02:00",
- "file_modified": "2026-11-06T12:46:30+02:00",
+ "generated_at": "2026-11-06T14:02:48+02:00",
+ "file_modified": "2026-11-06T14:02:01+02:00",
  "source_file": "Refurbishment_Tracker (2).xlsx",
  "include_values": true,
  "teams": [
@@ -253,14 +253,14 @@
    "unit": "1 of 2",
    "value": 9154.56,
    "category": "Refurb - Parts Available",
-   "team": null,
-   "date_allocated": null,
+   "team": "Alferes/ Samkelo",
+   "date_allocated": "2026-11-06",
    "target_date": null,
-   "status": "Not Started",
+   "status": "Completed",
    "parts_required": "Glass, to test unit",
    "parts_ordered": "Yes",
    "parts_received": null,
-   "date_completed": null,
+   "date_completed": "2026-11-06",
    "notes": null
   },
   {
