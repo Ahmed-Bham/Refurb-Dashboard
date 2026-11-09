@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-06T15:34:07+02:00",
- "file_modified": "2026-11-06T15:33:49+02:00",
+ "generated_at": "2026-11-09T08:44:14+02:00",
+ "file_modified": "2026-11-09T08:42:20+02:00",
  "source_file": "Refurbishment_Tracker (2).xlsx",
  "include_values": true,
  "teams": [
@@ -13,7 +13,7 @@
  "units": [
   {
    "job_id": "RF-002",
-   "sku": null,
+   "sku": "100005",
    "product": "Bora Lux",
    "brand": null,
    "unit": null,
