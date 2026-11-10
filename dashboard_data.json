@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-09T16:17:26+02:00",
- "file_modified": "2026-11-09T16:15:02+02:00",
+ "generated_at": "2026-11-10T16:23:06+02:00",
+ "file_modified": "2026-11-10T16:22:09+02:00",
  "source_file": "Refurbishment_Tracker (2).xlsx",
  "include_values": true,
  "teams": [
@@ -38,11 +38,11 @@
    "team": "Alferes/ Samkelo",
    "date_allocated": "2026-11-09",
    "target_date": null,
-   "status": "In Progress",
+   "status": "Completed",
    "parts_required": null,
    "parts_ordered": null,
    "parts_received": null,
-   "date_completed": null,
+   "date_completed": "2026-11-10",
    "notes": null
   },
   {
@@ -582,11 +582,11 @@
    "team": "Shaheed/ Ali",
    "date_allocated": "2026-11-09",
    "target_date": null,
-   "status": "In Progress",
+   "status": "Completed",
    "parts_required": null,
    "parts_ordered": null,
    "parts_received": null,
-   "date_completed": null,
+   "date_completed": "2026-11-10",
    "notes": null
   },
   {
