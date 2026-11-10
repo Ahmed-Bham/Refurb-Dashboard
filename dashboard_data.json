@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-10T16:44:36+02:00",
- "file_modified": "2026-11-10T16:43:36+02:00",
+ "generated_at": "2026-11-10T16:50:43+02:00",
+ "file_modified": "2026-11-10T16:49:59+02:00",
  "source_file": "Refurbishment_Tracker (2).xlsx",
  "include_values": true,
  "teams": [
@@ -937,7 +937,7 @@
    "brand": "Victoria",
    "unit": "10 of 11",
    "category": "Refurb - Parts Available",
-   "team": "Talent",
+   "team": "Talent/ Christopher",
    "date_allocated": "29-Oct-2026",
    "target_date": null,
    "status": "Completed",
@@ -954,7 +954,7 @@
    "brand": "Victoria",
    "unit": "11 of 11",
    "category": "Refurb - Parts Available",
-   "team": "Talent",
+   "team": "Talent/ Christopher",
    "date_allocated": "29-Oct-2026",
    "target_date": null,
    "status": "Completed",
