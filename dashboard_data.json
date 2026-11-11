@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-10T16:50:43+02:00",
- "file_modified": "2026-11-10T16:49:59+02:00",
+ "generated_at": "2026-11-11T16:19:08+02:00",
+ "file_modified": "2026-11-11T16:18:04+02:00",
  "source_file": "Refurbishment_Tracker (2).xlsx",
  "include_values": true,
  "teams": [
@@ -1230,6 +1230,23 @@
    "date_allocated": "2026-11-10",
    "target_date": null,
    "status": "In Progress",
+   "parts_required": null,
+   "parts_ordered": null,
+   "parts_received": null,
+   "date_completed": null,
+   "notes": null
+  },
+  {
+   "job_id": "RF-109",
+   "sku": "100110",
+   "product": "Zeus",
+   "brand": "Xuzhou",
+   "unit": "1 of 1",
+   "category": "Refurb - Parts Available",
+   "team": null,
+   "date_allocated": null,
+   "target_date": null,
+   "status": "Not Started",
    "parts_required": null,
    "parts_ordered": null,
    "parts_received": null,
