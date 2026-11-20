@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-18T08:31:11+02:00",
- "file_modified": "2026-11-18T08:29:22+02:00",
+ "generated_at": "2026-11-20T15:08:45+02:00",
+ "file_modified": "2026-11-20T15:08:02+02:00",
  "source_file": "Refurbishment_Tracker (2).xlsx",
  "include_values": true,
  "teams": [
@@ -56,11 +56,11 @@
    "team": "Alferes/ Samkelo",
    "date_allocated": "2026-11-17",
    "target_date": null,
-   "status": "In Progress",
-   "parts_required": null,
+   "status": "Completed",
+   "parts_required": "2 legs",
    "parts_ordered": null,
    "parts_received": null,
-   "date_completed": null,
+   "date_completed": "2026-11-19",
    "notes": null
   },
   {
@@ -683,9 +683,9 @@
    "unit": "1 of 2",
    "category": "Refurb - Parts to Order",
    "team": null,
-   "date_allocated": null,
+   "date_allocated": "2026-11-20",
    "target_date": null,
-   "status": "Not Started",
+   "status": "In Progress",
    "parts_required": null,
    "parts_ordered": null,
    "parts_received": null,
@@ -1059,11 +1059,11 @@
    "team": "Alferes/ Samkelo",
    "date_allocated": "2026-11-17",
    "target_date": null,
-   "status": "In Progress",
-   "parts_required": "Air Control, Spigot",
+   "status": "Completed",
+   "parts_required": null,
    "parts_ordered": "Yes",
    "parts_received": null,
-   "date_completed": null,
+   "date_completed": "2026-11-19",
    "notes": null
   },
   {
